@@ -8,6 +8,6 @@ RUN apk add --no-cache ca-certificates curl
 
 COPY --from=devopsfaith/krakend /usr/bin/krakend /app
 
-CMD curl $KRAKEND_CONFIG_URL --output krakend.json && ./krakend run -c ./krakend.json -d
+CMD curl $KRAKEND_CONFIG_URL --output krakend.json && ./krakend run -c ./krakend.json -d -p 80
 
-EXPOSE 8000 8090
+EXPOSE 80 8090
